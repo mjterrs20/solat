@@ -54,13 +54,6 @@ function shalat($keyword) {
 	$result .= $json['data']['Isha'];
     return $result;
 }
-#-------------------------[Function]-------------------------#
-
-# require_once('./src/function/search-1.php');
-# require_once('./src/function/download.php');
-# require_once('./src/function/random.php');
-# require_once('./src/function/search-2.php');
-# require_once('./src/function/hard.php');
 
 #-------------------------[Function]-------------------------#
 function cuaca($keyword) {
@@ -78,6 +71,15 @@ function cuaca($keyword) {
 	$result .= $json['weather']['0']['description'];
     return $result;
 }
+#-------------------------[Function]-------------------------#
+
+# require_once('./src/function/search-1.php');
+# require_once('./src/function/download.php');
+# require_once('./src/function/random.php');
+# require_once('./src/function/search-2.php');
+# require_once('./src/function/hard.php');
+
+
 #-------------------------[Function]-------------------------#
 
 # require_once('./src/function/search-1.php');
@@ -115,7 +117,19 @@ if($message['type']=='text') {
             )
         );
     }
-	
+	if ($command == '/cuaca') {
+
+        $result = cuaca($options);
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                    'type' => 'text',
+                    'text' => $result
+                )
+            )
+        );
+    }
 
 }else if($message['type']=='sticker')
 {	
