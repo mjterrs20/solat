@@ -1,10 +1,5 @@
 <?php
-/*
-copyright @ medantechno.com
-Modified @ Farzain - zFz
-2017
 
-*/
 
 require_once('./line_class.php');
 require_once('./unirest-php-master/src/Unirest.php');
@@ -69,7 +64,7 @@ function shalat($keyword) {
 
 //show menu, saat join dan command /menu
 if ($type == 'join' || $command == '/menu') {
-    $text = "Assalamualaikum Kakak, aku adalah bot jadwal shalat, silahkan ketik\n\n/shalat <nama tempat>\n\nnanti aku bakalan kasih tahu jam berapa waktunya shalat ^_^";
+    $text = "Assalamualaikum Kakak, aku adalah bot yang dikembankan oleh team melek";
     $balas = array(
         'replyToken' => $replyToken,
         'messages' => array(
